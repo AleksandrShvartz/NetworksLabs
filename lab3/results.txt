@@ -1,0 +1,68 @@
+=== PART 1: Basic Correctness (n=4, m=1) ===
+commander,traitor,cmd_value,agreement,correctness,messages
+0,1,0,yes,yes,9
+0,1,1,yes,yes,9
+0,2,0,yes,yes,9
+0,2,1,yes,yes,9
+0,3,0,yes,yes,9
+0,3,1,yes,yes,9
+1,0,0,yes,yes,9
+1,0,1,yes,yes,9
+1,2,0,yes,yes,9
+1,2,1,yes,yes,9
+1,3,0,yes,yes,9
+1,3,1,yes,yes,9
+2,0,0,yes,yes,9
+2,0,1,yes,yes,9
+2,1,0,yes,yes,9
+2,1,1,yes,yes,9
+2,3,0,yes,yes,9
+2,3,1,yes,yes,9
+3,0,0,yes,yes,9
+3,0,1,yes,yes,9
+3,1,0,yes,yes,9
+3,1,1,yes,yes,9
+3,2,0,yes,yes,9
+3,2,1,yes,yes,9
+
+=== PART 2: Scaling ===
+n,m,trials,agreement_rate,correctness_rate,avg_messages
+4,1,20,1.00,1.00,9.00
+7,1,20,1.00,1.00,36.00
+10,1,20,1.00,1.00,81.00
+13,1,20,1.00,1.00,144.00
+7,2,20,1.00,1.00,156.00
+10,2,20,1.00,1.00,585.00
+13,2,20,1.00,1.00,1464.00
+
+=== PART 3: Boundary n=3m vs n=3m+1 ===
+n,m,constraint,trials,agreement_rate,correctness_rate
+3,1,n=3m (violated),50,1.00,0.76
+4,1,n=3m+1 (satisfied),50,1.00,1.00
+6,2,n=3m (violated),50,0.96,0.84
+7,2,n=3m+1 (satisfied),50,1.00,1.00
+
+=== PART 4: Byzantine Strategies (n=7, m=2) ===
+strategy,commander_type,trials,agreement_rate,correctness_rate
+RANDOM,honest,20,1.00,1.00
+RANDOM,byzantine,20,1.00,1.00
+ALWAYS_ZERO,honest,20,1.00,1.00
+ALWAYS_ZERO,byzantine,20,1.00,1.00
+ALWAYS_OPPOSITE,honest,20,1.00,1.00
+ALWAYS_OPPOSITE,byzantine,20,1.00,1.00
+SPLIT,honest,20,1.00,1.00
+SPLIT,byzantine,20,1.00,1.00
+
+=== PART 5: Message Complexity ===
+n,m,actual_messages,theoretical_messages
+4,1,9,9
+7,1,36,36
+10,1,81,81
+13,1,144,144
+16,1,225,225
+7,2,156,156
+10,2,585,585
+13,2,1464,1464
+10,3,3609,3609
+13,3,13344,13344
+

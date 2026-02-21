@@ -1,0 +1,11 @@
+=== Debug Trace: OM(1) with n=4, commander=0, traitor=3 ===
+OM(1): General 0 -> General 1: 1
+OM(1): General 0 -> General 2: 1
+OM(1): General 0 -> General 3: 1
+  OM(0): General 1 -> General 2: 1
+  OM(0): General 1 -> General 3: 1
+  OM(0): General 2 -> General 1: 1
+  OM(0): General 2 -> General 3: 1
+  OM(0): General 3 -> General 1: 1
+  OM(0): General 3 -> General 2: 1
+
