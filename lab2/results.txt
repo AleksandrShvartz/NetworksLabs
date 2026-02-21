@@ -1,0 +1,50 @@
+=== PART 1: Initial Convergence (N=10) ===
+topology,num_routers,convergence_ticks,tables_correct,reachable_pairs,total_pairs,avg_path_length
+linear,10,10,yes,90,90,3.67
+ring,10,6,yes,90,90,2.78
+star,10,3,yes,90,90,1.80
+
+=== PART 2: Scalability ===
+topology,num_routers,convergence_ticks,avg_path_length
+linear,5,5,2.00
+ring,5,3,1.50
+star,5,3,1.60
+linear,10,10,3.67
+ring,10,6,2.78
+star,10,3,1.80
+linear,20,20,7.00
+ring,20,11,5.26
+star,20,3,1.90
+linear,50,50,17.00
+ring,50,26,12.76
+star,50,3,1.96
+
+=== PART 3: Stochastic Link Failures (N=10) ===
+topology,failure_prob,avg_links_broken,avg_reconvergence_ticks,avg_reachable_ratio,tables_always_correct,avg_path_length
+linear,0.00,0.00,10.00,1.00,yes,3.67
+linear,0.10,0.85,8.30,0.73,yes,3.04
+linear,0.20,1.60,7.15,0.59,yes,2.64
+linear,0.30,2.45,5.75,0.43,yes,2.16
+linear,0.50,4.25,3.90,0.23,yes,1.57
+ring,0.00,0.00,6.00,1.00,yes,2.78
+ring,0.10,0.90,8.15,0.92,yes,3.19
+ring,0.20,1.65,6.90,0.72,yes,2.71
+ring,0.30,2.75,5.75,0.52,yes,2.24
+ring,0.50,4.80,4.05,0.27,yes,1.62
+star,0.00,0.00,3.00,1.00,yes,1.80
+star,0.10,0.85,3.00,0.84,yes,1.78
+star,0.20,1.60,3.00,0.71,yes,1.75
+star,0.30,2.45,3.00,0.58,yes,1.72
+star,0.50,4.25,2.95,0.35,yes,1.60
+
+=== PART 4: Single Link Failure & Recovery ===
+topology,event,convergence_ticks,reachable_pairs,tables_correct
+linear,initial,10,90,yes
+linear,link_break,9,72,yes
+linear,link_restore,10,90,yes
+ring,initial,6,90,yes
+ring,link_break,10,90,yes
+ring,link_restore,6,90,yes
+star,initial,3,90,yes
+star,link_break,3,72,yes
+star,link_restore,3,90,yes
